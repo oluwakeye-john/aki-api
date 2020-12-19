@@ -1,4 +1,4 @@
-const CORS_ANYWHERE_URL = 'https://cors-anywhere.herokuapp.com';
+const CORS_ANYWHERE_URL = "https://free-cors.herokuapp.com";
 
 /**
  * this add cors anywhere to any request made, thereby preventing any cors error
