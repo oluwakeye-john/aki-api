@@ -1,4 +1,4 @@
-const axios = require('axios');
+const { corsedUrl, api } = require('./api');
 
 /**
  * gets the server automatically, so we don't rely on hard coded values.
@@ -11,7 +11,7 @@ const getServer = async (region) => {
     const [language, themeName] = split;
 
     const url = `https://${language}.akinator.com`;
-    const { data } = await axios.get(url);
+    const { data } = await api.get(corsedUrl(url));
 
     const regex = /\[{"translated_theme_name":"[\s\S]*","urlWs":"https:\\\/\\\/srv[0-9]+\.akinator\.com:[0-9]+\\\/ws","subject_id":"[0-9]+"}]/gim;
     const parsed = JSON.parse(data.match(regex));
