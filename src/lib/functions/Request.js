@@ -1,4 +1,5 @@
-const { corsedUrl, api } = require('./api');
+const axios = require('axios');
+const { corsedUrl } = require('./api');
 
 /**
  * requests for a uri with default options.
@@ -21,7 +22,7 @@ const params = {
 
 const rp = async (uri) => {
   try {
-    const result = await api.get(corsedUrl(uri), {
+    const result = await axios.get(corsedUrl(uri), {
       headers,
       params,
     });
